@@ -17,6 +17,7 @@ class LoginProvider extends ChangeNotifier {
   bool get isLoading => _isLoading;
   String? get errorMessage => _errorMessage;
   UserEntity? get user => _user;
+  bool get isLoggedIn => _user != null;
 
   Future<void> login(String email, String password, BuildContext context) async {
     _setLoading(true);
