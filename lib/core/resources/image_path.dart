@@ -1,0 +1,44 @@
+class ImagesPath {
+  static String imageRoute = 'assets/images/';
+   
+  static String logo = '${imageRoute}Logo.svg';
+  static String blueCurve = '${imageRoute}blueCurve.png';
+  static String grayCurve = '${imageRoute}grayCurve.png';
+  static String oclockSmall = '${imageRoute}oclockSmall.svg';
+  static String mapSmall = '${imageRoute}mapSmall.svg';
+  static String calendarSmall = '${imageRoute}calendarSmall.svg';
+  static String eyeIcon = '${imageRoute}eye.svg';
+  static String closeEyeIcon = '${imageRoute}closeEye.svg';
+  static String reScanIcon = '${imageRoute}reScanIcon.svg';
+  static String logoutIcon = '${imageRoute}logout.svg';
+  static String exitIcon = '${imageRoute}exitIcon.svg';
+  static String doneIcon = '${imageRoute}doneIcon.svg';
+  static String deniedIcon = '${imageRoute}deniedIcon.svg';
+  static String arrowIcon = '${imageRoute}arrowIcon.svg';
+  static String lineIcon = '${imageRoute}line.svg';
+  static String greenLineIcon = '${imageRoute}greenLine.svg';
+  static String redLineIcon = '${imageRoute}redLine.svg';
+  static String fillCheckBoxIcon = '${imageRoute}fillCheckBox.svg';
+  static String unFillCheckBoxIcon = '${imageRoute}unFillCheckBox.svg';
+  static String xIccon = '${imageRoute}X.svg';
+  static String arrowDownIcon = '${imageRoute}arrowDown.svg';
+  static String arrowTopIcon = '${imageRoute}arrowTop.svg';
+  static String alertIcon = '${imageRoute}alertIcon.svg';
+  static String logoIcon = '${imageRoute}logoIcon.svg';
+  static String attendanceTracking = '${imageRoute}attendanceTracking.svg';
+  static String logoAndText = '${imageRoute}logoAndText.svg';
+  static String checkBox = '${imageRoute}checkBox.svg';
+  static String greenBorder = '${imageRoute}greenBorder.svg';
+  static String greenTrue = '${imageRoute}greenTrue.png';
+  static String blueLine = '${imageRoute}blueLine.svg';
+  static String redBorder = '${imageRoute}redBorder.svg';
+  static String redX = '${imageRoute}redX.png';
+  static String exam = '${imageRoute}exam.png';
+  static String course = '${imageRoute}course.png';
+  static String location = '${imageRoute}Location.png';
+  static String startExamIcon = '${imageRoute}startExamIcon.svg';
+  static String pauseExamIcon = '${imageRoute}pauseExamIcon.svg';
+  static String stopExamIcon = '${imageRoute}stopExamIcon.svg';
+  static String tatLogo = '${imageRoute}tatLogo.svg';
+  static String arrowDownTat = '${imageRoute}arrowDownTat.svg';
+}
