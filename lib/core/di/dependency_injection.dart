@@ -5,6 +5,11 @@ import 'package:clean_arch_app/features/auth/data/repositories/login_reposotory.
 import 'package:clean_arch_app/features/auth/domain/repositories/login_repostory.dart';
 import 'package:clean_arch_app/features/auth/domain/useCases/login_use_cases.dart';
 import 'package:clean_arch_app/features/auth/presentation/provider/login_provider.dart';
+import 'package:clean_arch_app/features/instructor/data/dataSource/remote_data_source.dart';
+import 'package:clean_arch_app/features/instructor/data/repositories/instructor_reposotory.dart';
+import 'package:clean_arch_app/features/instructor/domain/repositories/instructor_repostory.dart';
+import 'package:clean_arch_app/features/instructor/domain/useCases/instructor_use_cases.dart';
+import 'package:clean_arch_app/features/instructor/presentation/provider/instructor_provider.dart';
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 
@@ -35,5 +40,26 @@ Future<void> initializeDependencies() async {
   // Providers
   serviceLocator.registerFactory<LoginProvider>(
     () => LoginProvider(loginUseCase: serviceLocator()),
+  );
+  
+
+  // Data Sources
+  serviceLocator.registerLazySingleton<InstructorRemoteDataSource>(
+    () => InstructorRemoteDataSource(apiConsumer: serviceLocator()),
+  );
+
+  // Repositories
+  serviceLocator.registerLazySingleton<InstructorRepository>(
+    () => InstructorRepositoryImpl(instructorRemoteDataSource: serviceLocator()),
+  );
+
+  // Use Cases
+  serviceLocator.registerLazySingleton<InstructorUseCase>(
+    () => InstructorUseCase(instructorRepository: serviceLocator()),
+  );
+
+  // Providers
+  serviceLocator.registerFactory<InstructorProvider>(
+    () => InstructorProvider(instructorUseCase: serviceLocator()),
   );
 } 

@@ -1,3 +1,5 @@
+import 'package:clean_arch_app/core/api/end_pionts.dart';
+import 'package:clean_arch_app/core/utilities/shared_prefrences_helper.dart';
 import 'package:dio/dio.dart';
 
 class DioInterceptor extends Interceptor {
@@ -9,14 +11,14 @@ class DioInterceptor extends Interceptor {
   void onRequest(
       RequestOptions options, RequestInterceptorHandler handler) async {
     // Attach the current access token to the request headers
-    // if (options.path != apiUrl + ApiEndPoints.refreshToken) {
-    //   print('hello token');
-    //   final accessToken = await SharedPrefrenceHelper.getAccessToken();
-    //   print('accessToken is $accessToken');
-    //   if (accessToken != null) {
-    //     options.headers['Authorization'] = 'Bearer $accessToken';
-    //   }
-    // }
+    if (options.path != EndPoints.baseUrl + EndPoints.refreshToken) {
+      print('hello token');
+      final accessToken = await SharedPrefrenceHelper.getAccessToken();
+      print('accessToken is $accessToken');
+      if (accessToken != null) {
+        options.headers['Authorization'] = 'Bearer $accessToken';
+      }
+    }
     super.onRequest(options, handler);
   }
 

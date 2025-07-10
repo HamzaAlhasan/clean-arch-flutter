@@ -1,6 +1,7 @@
 import 'package:clean_arch_app/core/di/dependency_injection.dart';
 import 'package:clean_arch_app/features/auth/presentation/pages/login_page.dart';
 import 'package:clean_arch_app/features/auth/presentation/provider/login_provider.dart';
+import 'package:clean_arch_app/features/instructor/presentation/provider/instructor_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -19,6 +20,9 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(
           create: (context) => serviceLocator<LoginProvider>(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => serviceLocator<InstructorProvider>(),
         ),
       ],
       child: MaterialApp(

@@ -4,7 +4,6 @@ import 'package:clean_arch_app/core/utilities/shared_prefrences_helper.dart';
 import 'package:clean_arch_app/features/auth/domain/entities/user_entity.dart';
 import 'package:clean_arch_app/features/auth/domain/useCases/login_use_cases.dart';
 import 'package:clean_arch_app/features/auth/presentation/pages/home_page.dart';
-import 'package:clean_arch_app/features/instructor/presentation/pages/instructor_page.dart';
 import 'package:flutter/material.dart';
 
 class LoginProvider extends ChangeNotifier {
@@ -40,9 +39,8 @@ class LoginProvider extends ChangeNotifier {
         _setLoading(false);
         print("hamza is ${user}");
         _setUser(user);
-        SharedPrefrenceHelper.setAccessToken(user.accessToken);
         SharedPrefrenceHelper.setDataModel(key: SharedKeys.userData, value: user);
-        Navigator.push(context, MaterialPageRoute(builder: (context) => const InstructorPage()));
+        Navigator.push(context, MaterialPageRoute(builder: (context) => const HomePage()));
         print('Login successful: ${user.firstName}');
       }
     );
